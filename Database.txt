@@ -1,0 +1,66 @@
+cd\
+cd xampp\mysql\bin
+mysql -u root
+SHOW DATABASES;
+CREATE DATABASE dbtransaksi;
+USE dbtransaksi;
+SHOW TABLES;
+CREATE TABLE tb_sepatu (
+     id_sepatu INT(11) NOT NULL AUTO_INCREMENT,
+     nama_sepatu VARCHAR(20) NOT NULL,
+     brand VARCHAR(20) NOT NULL,
+     harga INT(11) NOT NULL,
+     stok INT(11) NOT NULL,
+     id_supplier INT(11) NOT NULL,
+     PRIMARY KEY(id_sepatu)
+     );
+SHOW TABLES;
+DESC tb_sepatu;
+
+SELECT* FROM tb_sepatu;
+CREATE TABLE tb_transaksi (
+     id_transaksi INT(11) NOT NULL,
+     id_sepatu INT(11) NOT NULL,
+     id_pembeli INT(11) NOT NULL,
+     tanggal DATE NOT NULL,
+     keterangan VARCHAR(100) NOT NULL,
+     PRIMARY KEY(id_transaksi)
+     );
+SHOW TABLES;
+DESC tb_transaksi;
+SELECT* FROM tb_transaksi;
+CREATE TABLE tb_pembayaran (
+     id_pembayaran INT(11) NOT NULL,
+     tgl_bayar DATE NOT NULL,
+     total_bayar INT(11) NOT NULL,
+     id_transaksi INT(11) NOT NULL,
+     PRIMARY KEY(id_pembayaran)
+     );
+SHOW TABLES;
+DESC tb_pembayaran;
+
+SELECT* FROM tb_pembayaran;
+CREATE TABLE tb_supplier (
+     id_supplier INT(11) NOT NULL,
+     nama_supplier VARCHAR(30) NOT NULL,
+     no_telp CHAR(11) NOT NULL,
+     tanggal DATE NOT NULL,
+     alamat VARCHAR(100) NOT NULL,
+     PRIMARY KEY(id_supplier)
+     );
+SHOW TABLES;
+DESC tb_supplier;
+INSERT INTO tb_supplier
+
+SELECT* FROM tb_supplier;
+CREATE TABLE tb_pembeli (
+     id_pembeli INT(11) NOT NULL,
+     nama_pembeli VARCHAR(30) NOT NULL,
+     no_telp CHAR(14) NOT NULL,
+     alamat VARCHAR(50) NOT NULL,
+     PRIMARY KEY(id_pembeli)
+     );
+SHOW TABLES;
+DESC tb_pembeli;
+
+SELECT* FROM tb_pembeli;
